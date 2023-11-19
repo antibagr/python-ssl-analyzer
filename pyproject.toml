@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "app"
 version = "0.0.1"
-description = "TEMPLATE_DESCRIPTION"
-authors = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
-maintainers = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
+description = "Python app for analyzing servers' pkey certificates"
+authors = ["Anthony Bagrianov <rudiemeant@gmail.com>"]
+maintainers = ["Anthony Bagrianov <rudiemeant@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "3.11.4"
