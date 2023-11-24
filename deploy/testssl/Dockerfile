@@ -23,7 +23,7 @@ COPY --chown=testssl_user:testssl_user ./scripts/get_cmd_lines.sh ./get_cmd_line
 COPY --chown=testssl_user:testssl_user ./data/input.txt ./input.txt
 
 # Generate parallel commands as the non-root user
-RUN ./get_cmd_lines.sh ./input.txt ./commands.txt
+RUN bash ./get_cmd_lines.sh ./input.txt ./commands.txt
 
 RUN mkdir -p /home/testssl_user/results
 
