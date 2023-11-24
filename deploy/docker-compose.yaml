@@ -3,24 +3,39 @@ version: "3.9"
 services:
   web:
     container_name: web
-    extends:
-      file: common.yaml
-      service: web
+    build:
+      context: ..
+      dockerfile: deploy/web/Dockerfile.win
+    env_file:
+      - ../.env
+    volumes:
+      - ../data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - clickhouse
+      - testssl.sh
     networks:
       - clickhouse-network
 
   testssl.sh:
     container_name: testssl.sh
-    extends:
-      file: common.yaml
-      service: testssl.sh
+    build:
+      context: ..
+      dockerfile: deploy/testssl.Dockerfile
+    environment:
+      - MASS_TESTING_MODE=parallel
+      - TEST_SSL_INPUT_FILE=./data/input.txt
+    env_file:
+      - ../.env
+    deploy:
+      resources:
+        reservations:
+          cpus: "4"
+          memory: 4G
 
   clickhouse:
     container_name: clickhouse
     image: clickhouse/clickhouse-server
-    restart: always
     environment:
       - CLICKHOUSE_DB=${CLICKHOUSE_DB}
       - CLICKHOUSE_USER=${CLICKHOUSE_USER}
@@ -29,6 +44,8 @@ services:
     ports:
       - ${CLICKHOUSE_PORT}:8123
       - 9000:9000
+    env_file:
+      - ../.env
     networks:
       - clickhouse-network
     volumes:

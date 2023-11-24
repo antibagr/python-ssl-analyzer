@@ -2,7 +2,7 @@ SOURCES = app tests
 
 .DEFAULT_GOAL := help
 
-DOCKER_COMPOSE_FILE = contrib/docker-compose.yml
+DOCKER_COMPOSE_FILE = deploy/docker-compose.clickhouse.yaml
 DOCKER_COMPOSE_PROJECT_NAME = app
 
 help: ## Display this help screen
@@ -33,7 +33,7 @@ run: ## Run the development Django server
 .PHONY: run
 
 compose-up: ## Run the development Django server with docker-compose
-	COMPOSE_PROJECT_NAME=${DOCKER_COMPOSE_PROJECT_NAME} docker-compose -f ${DOCKER_COMPOSE_FILE} --env-file .env up --build --remove-orphans --force-recreate
+	docker-compose --project-name ${DOCKER_COMPOSE_PROJECT_NAME} --env-file .env -f ${DOCKER_COMPOSE_FILE} up --force-recreate --build --remove-orphans
 .PHONY: compose-up
 
 compose-down: ## Stop the development Django server with docker-compose

@@ -5,8 +5,7 @@ import attrs
 from loguru import logger
 
 from app.dto.entities.fqdn import FQDN
-from app.lib.docker import TestSSLContainer
-from app.lib.test_ssl_parser import TestSSLJsonParser
+from app.lib.testssl import TestSSLContainer, TestSSLJsonParser
 
 
 @t.final

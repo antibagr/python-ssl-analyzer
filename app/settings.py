@@ -19,13 +19,15 @@ class Settings(BaseSettings):
     TEST_SSL_CONTAINER_NAME: str
     TEST_SSL_OUTPUT_FILE: pathlib.Path
     TEST_SSL_INPUT_FILE: pathlib.Path
-    TEST_SSL_DATA_DIR: pathlib.Path
+    TEST_SSL_COMMANDS_FILE: pathlib.Path
+    TEST_SSL_WORKDIR: pathlib.Path
 
     CLICKHOUSE_HOST: str
     CLICKHOUSE_PORT: int
     CLICKHOUSE_USER: str
     CLICKHOUSE_PASSWORD: str
     CLICKHOUSE_TABLE_NAME: str
+    CLICKHOUSE_CONNECT_TIMEOUT: int = 15
 
     @property
     def is_production(self) -> bool:

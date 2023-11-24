@@ -2,6 +2,14 @@ from unittest import mock
 
 from app.main import main
 
+TEST_OUTPUT_JSON = """
+{
+    "data": {
+        "hello": "world"
+    }
+}
+"""
+
 
 def test_main() -> None:
     main()
