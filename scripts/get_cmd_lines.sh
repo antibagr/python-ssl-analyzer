@@ -14,7 +14,7 @@ fi
 while IFS= read -r line || [ -n "$line" ]; do
     host=$(echo "$line" | cut -d: -f1)
     port=$(echo "$line" | cut -d: -f2)
-    cmd="MAX_PARALLEL=100 testssl.sh --jsonfile ./results/$host  --mode parallel --quiet --protocols --server-defaults --overwrite $host:$port"
+    cmd="MAX_PARALLEL=100 testssl.sh --jsonfile ./results/${host////_}  --mode parallel --quiet --protocols --server-defaults --overwrite $host:$port"
 
     echo "$cmd" >>"$2"
 done <"$1"

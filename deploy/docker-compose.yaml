@@ -21,7 +21,7 @@ services:
     container_name: testssl.sh
     build:
       context: ..
-      dockerfile: deploy/testssl.Dockerfile
+      dockerfile: deploy/testssl/Dockerfile
     environment:
       - MASS_TESTING_MODE=parallel
     env_file:

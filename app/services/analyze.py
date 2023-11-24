@@ -14,11 +14,11 @@ class DataProviderRepositoryInterface(t.Protocol):
 
 @t.final
 @attrs.define(slots=True, frozen=False, kw_only=True)
-class SSLCheckerService:
+class AnalyzeService:
     _data_provider_repo: DataProviderRepositoryInterface
     _db: DB
 
-    def run(self) -> None:
+    def analyze(self) -> None:
         logger.info("Starting SSL Checker")
         for fqdn in self._data_provider_repo.get():
             logger.info(f"Adding {fqdn}")

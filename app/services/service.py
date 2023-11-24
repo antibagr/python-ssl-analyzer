@@ -8,7 +8,7 @@ from loguru import logger
 from app.lib.testssl import TestSSLContainer, TestSSLJsonParser
 from app.repository.db import DB
 from app.repository.provider import TestSSLDataProviderRepository
-from app.services.ssl_checker import SSLCheckerService
+from app.services.analyze import AnalyzeService
 from app.settings import settings
 
 # Dependency Layer
@@ -40,7 +40,7 @@ data_provider_repo = TestSSLDataProviderRepository(
 
 
 # Service Layer
-ssl_checker_service = SSLCheckerService(
+analyze_service = AnalyzeService(
     data_provider_repo=data_provider_repo,
     db=db,
 )

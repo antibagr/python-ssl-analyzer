@@ -3,7 +3,7 @@ import typing as t
 
 import click
 
-from app.services.service import application_dependencies, ssl_checker_service
+from app.services.service import analyze_service, application_dependencies
 
 
 @click.group()
@@ -18,7 +18,7 @@ def handle_exit_signal(_sig, _frame) -> t.NoReturn:
 @click.command()
 def run() -> None:
     with application_dependencies():
-        ssl_checker_service.run()
+        analyze_service.analyze()
 
 
 cli.add_command(run)
