@@ -1,5 +1,5 @@
 #!/bin/bash
 
-poetry run python app/main.py
+poetry run python -m app.cmd run
 
 exec "$@"

@@ -1,0 +1,39 @@
+﻿version: "3.9"
+
+services:
+  web:
+    container_name: web
+    extends:
+      file: common.yaml
+      service: web
+    depends_on:
+      - mongodb
+    networks:
+      - mongodb-network
+
+  testssl.sh:
+    container_name: testssl.sh
+    extends:
+      file: common.yaml
+      service: testssl.sh
+
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mongodb-network
+
+
+volumes:
+  mongo-data:
+
+networks:
+  mongodb-network:
+    driver: bridge

@@ -33,7 +33,7 @@ run: ## Run the development Django server
 .PHONY: run
 
 compose-up: ## Run the development Django server with docker-compose
-	COMPOSE_PROJECT_NAME=${DOCKER_COMPOSE_PROJECT_NAME} docker-compose -f ${DOCKER_COMPOSE_FILE} up --build --remove-orphans --force-recreate
+	COMPOSE_PROJECT_NAME=${DOCKER_COMPOSE_PROJECT_NAME} docker-compose -f ${DOCKER_COMPOSE_FILE} --env-file .env up --build --remove-orphans --force-recreate
 .PHONY: compose-up
 
 compose-down: ## Stop the development Django server with docker-compose

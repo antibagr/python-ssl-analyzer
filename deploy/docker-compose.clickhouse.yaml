@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  web:
+    container_name: web
+    extends:
+      file: common.yaml
+      service: web
+    depends_on:
+      - clickhouse
+    networks:
+      - clickhouse-network
+
+  testssl.sh:
+    container_name: testssl.sh
+    extends:
+      file: common.yaml
+      service: testssl.sh
+
+  clickhouse:
+    container_name: clickhouse
+    image: clickhouse/clickhouse-server
+    restart: always
+    environment:
+      - CLICKHOUSE_DB=${CLICKHOUSE_DB}
+      - CLICKHOUSE_USER=${CLICKHOUSE_USER}
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
+    ports:
+      - ${CLICKHOUSE_PORT}:8123
+      - 9000:9000
+    networks:
+      - clickhouse-network
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse/
+
+
+volumes:
+  clickhouse-data:
+
+networks:
+  clickhouse-network:
+    driver: bridge
