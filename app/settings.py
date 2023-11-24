@@ -16,9 +16,6 @@ class Settings(BaseSettings):
     ENVIRONMENT: str
     DEBUG: bool
 
-    MONGO_DB_URI: str  # MongoDsn adds a port number to the URI, which is not supported by the MongoDB client
-    MONGO_DB_NAME: str
-
     TEST_SSL_CONTAINER_NAME: str
     TEST_SSL_OUTPUT_FILE: pathlib.Path
     TEST_SSL_INPUT_FILE: pathlib.Path

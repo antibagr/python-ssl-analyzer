@@ -2,23 +2,15 @@ import typing as t
 
 from loguru import logger
 
-from app.dto.annotations import TestSSLRecords
+from app.dto.annotations import Domain, TestSSLRecords
 from app.dto.entities.fqdn import FQDN
 
-Protocols = ("SSLv2", "SSLv3", "TLS1", "TLS1_1", "TLS1_2", "TLS1_3")
-
-logger.bind(context="TestSSL")
-
-
-class JsonParserWarning(Warning):
-    """
-    Warning indicating that the JSON parser has encountered an error.
-    """
+Protocols: t.Final = ("SSLv2", "SSLv3", "TLS1", "TLS1_1", "TLS1_2", "TLS1_3")
 
 
 class TestSSLJsonParser:
     def __init__(self) -> None:
-        self._data = []
+        self._data: TestSSLRecords = []
 
     def set_data(self, *, data: TestSSLRecords) -> None:
         self._data = data
@@ -45,6 +37,6 @@ class TestSSLJsonParser:
                 if record["finding"] != "not offered":
                     fqdns[fqdn].supported_protocols.append(record["id"])
             elif record["id"].startswith("cert_subjectAltName"):
-                fqdns[fqdn].alt_names |= set(record["finding"].split())
+                fqdns[fqdn].alt_names |= set(t.cast(list[Domain], record["finding"].split()))
 
         return iter(fqdns.values())

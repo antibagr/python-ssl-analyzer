@@ -1,21 +1,8 @@
 from clickhouse_connect.driver.client import Client as ClickHouseClient
 from clickhouse_connect.driver.insert import InsertContext
-from loguru import logger
-from pymongo.mongo_client import MongoClient
 
-from app.dto.entities.collections import FQDNRepository, MongoFQDN
 from app.dto.entities.fqdn import FQDN
 from app.repository.db.clickhouse import ClickHouseDB
-from app.repository.db.mongo import MongoDB
-
-
-class MongoFQDNDB(MongoDB):
-    def __init__(self, *, client: MongoClient, database: str) -> None:
-        super().__init__(client=client, database=database)
-        self._repository = FQDNRepository(database=self._database)
-
-    def save_fqdn(self, *, fqdn: MongoFQDN) -> None:
-        self._repository.save(fqdn)
 
 
 class ClickHouseFQDNDB(ClickHouseDB):
@@ -26,7 +13,7 @@ class ClickHouseFQDNDB(ClickHouseDB):
         table_name: str,
     ) -> None:
         super().__init__(client=client, table_name=table_name)
-        self._context = None
+        self._context: InsertContext = None  # type: ignore
 
     @property
     def context(self) -> InsertContext:

@@ -2,9 +2,6 @@ import types
 import typing as t
 
 from loguru import logger
-from pymongo.mongo_client import MongoClient
-
-from app.settings import settings
 
 
 class BaseDB:

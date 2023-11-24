@@ -4,7 +4,6 @@ from contextlib import contextmanager
 import clickhouse_connect
 import docker
 from loguru import logger
-from pymongo.mongo_client import MongoClient
 
 from app.lib.docker import TestSSLContainer
 from app.lib.test_ssl_parser import TestSSLJsonParser
@@ -48,22 +47,12 @@ ssl_checker_service = SSLCheckerService(
 
 
 def startup() -> None:
-    logger.info("starting up")
-    logger.info(f"database status: {db.is_alive()}")
+    logger.info("Starting up")
     db.connect()
-    from app.dto.entities.fqdn import FQDN
-
-    db.save_fqdn(
-        fqdn=FQDN(
-            fqdn="test.com",
-            alt_names=["test.com", "test2.com"],
-            supported_protocols=["TLSv1.2", "TLSv1.3"],
-        )
-    )
 
 
 def shutdown() -> None:
-    logger.info("shutting down")
+    logger.info("Shutting down")
     test_ssl_container.stop()
     db.disconnect()
 

@@ -2,6 +2,7 @@ import io
 import json
 import pathlib
 import tarfile
+import typing as t
 
 import docker
 import requests
@@ -46,8 +47,11 @@ class TestSSLContainer:
             mode="r",
         ) as tar:
             try:
-                json_bytes: bytes = tar.extractfile(self._output_path.name).read()
+                if _file := tar.extractfile(self._output_path.name):
+                    json_bytes = _file.read()
+                else:
+                    raise KeyError
             except KeyError:
                 logger.error("No file in tar archive")
                 return []
-        return json.loads(json_bytes)
+        return t.cast(list[TestSSLRecord], json.loads(json_bytes))

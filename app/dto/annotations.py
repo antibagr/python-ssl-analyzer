@@ -1,7 +1,7 @@
 import typing as t
 
 TestSSLRecord = t.TypedDict(
-    "Record",
+    "TestSSLRecord",
     {
         "id": str,
         "ip": str,
@@ -11,5 +11,5 @@ TestSSLRecord = t.TypedDict(
     },
 )
 
-TestSSLRecords = list[TestSSLRecord]
+TestSSLRecords: t.TypeAlias = list[TestSSLRecord]
 Domain = t.NewType("Domain", str)

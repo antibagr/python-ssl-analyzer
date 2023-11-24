@@ -1,13 +1,10 @@
 import typing as t
 
 import attrs
-import docker
 from loguru import logger
 
 from app.dto.entities.fqdn import FQDN
 from app.repository.db import DB
-
-logger.bind(context="ssl_checker")
 
 
 class DataProviderRepositoryInterface(t.Protocol):
@@ -22,7 +19,7 @@ class SSLCheckerService:
     _db: DB
 
     def run(self) -> None:
-        logger.info("running ssl checker")
+        logger.info("Starting SSL Checker")
         for fqdn in self._data_provider_repo.get():
             logger.info(f"Adding {fqdn}")
             self._db.save_fqdn(fqdn=fqdn)

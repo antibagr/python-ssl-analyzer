@@ -29,7 +29,7 @@ class ClickHouseDB(BaseDB):
         )
 
     def disconnect(self) -> None:
-        return self._client.close()
+        self._client.close()
 
     def is_alive(self) -> bool:
         return self._client.ping()

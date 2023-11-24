@@ -37,5 +37,5 @@ class TestSSLDataProviderRepository:
                 fqdn_list.append(fqdn.fqdn)
                 yield fqdn
         finally:
-            for fqdn in self.get_missing_fqdn(parsed=fqdn_list):
-                logger.error(f"Failed to parse {fqdn}")
+            for missing_fqdn in self.get_missing_fqdn(parsed=fqdn_list):
+                logger.error(f"Failed to parse {missing_fqdn}")

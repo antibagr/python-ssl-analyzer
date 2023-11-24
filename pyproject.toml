@@ -1,34 +1,32 @@
 [tool.poetry]
 name = "app"
 version = "0.0.1"
-description = "Python app for analyzing servers' pkey certificates"
+description = "Python app for analyzing servers SSL certificates and supported TLS versions."
 authors = ["Anthony Bagrianov <rudiemeant@gmail.com>"]
 maintainers = ["Anthony Bagrianov <rudiemeant@gmail.com>"]
+license = "GNU GPLv3"
 
 [tool.poetry.dependencies]
 python = "3.11.4"
-pymongo = {extras = ["srv"], version = "4.6.0"}
-pydantic = "2.5.2"
-pydantic-settings = "2.1.0"
-pydantic-mongo = "2.0.2"
 loguru = "0.7.2"
 attrs = "23.1.0"
-docker = "^6.1.3"
-click = "^8.1.7"
-clickhouse-connect = "^0.6.21"
-clickhouse-driver = {extras = ["lz4"], version = "^0.2.6"}
-cython = "^3.0.5"
+click = "8.1.7"
+pydantic = "2.5.2"
+pydantic-settings = "2.1.0"
+docker = "6.1.3"
+clickhouse-connect = "0.6.21"
 
 [tool.poetry.group.dev.dependencies]
 black = "23.11.0"
 isort = "5.12.0"
 flake8 = "6.1.0"
 mypy = "1.7.0"
-bandit = {extras = ["toml"], version = "1.7.5"}
+bandit = { extras = ["toml"], version = "1.7.5" }
 pytest-asyncio = "0.21.1"
 flake8-comments = "0.1.2"
 flake8-print = "5.0.0"
 coverage = "7.3.2"
+types-requests = "2.31.0.10"
 
 [tool.black]
 line-length = 100
@@ -64,12 +62,12 @@ namespace_packages = true
 exclude = []
 
 [[tool.mypy.overrides]]
-module = []
+module = ["docker.*"]
 ignore_missing_imports = true
 
 [tool.bandit]
 skips = [
-    "B311" # Standard pseudo-random generators are not suitable for security/cryptographic purposes
+    "B311", # Standard pseudo-random generators are not suitable for security/cryptographic purposes
 ]
 
 [tool.pytest.ini_options]
