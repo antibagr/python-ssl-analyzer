@@ -13,12 +13,8 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    ENVIRONMENT: str
-    DEBUG: bool
-
     TEST_SSL_CONTAINER_NAME: str
-    TEST_SSL_OUTPUT_FILE: pathlib.Path
-    TEST_SSL_INPUT_FILE: pathlib.Path
+    TEST_SSL_OUTPUT_DIR: pathlib.Path
     TEST_SSL_COMMANDS_FILE: pathlib.Path
     TEST_SSL_WORKDIR: pathlib.Path
 
@@ -28,10 +24,6 @@ class Settings(BaseSettings):
     CLICKHOUSE_PASSWORD: str
     CLICKHOUSE_TABLE_NAME: str
     CLICKHOUSE_CONNECT_TIMEOUT: int = 15
-
-    @property
-    def is_production(self) -> bool:
-        return self.ENVIRONMENT == "prod"
 
 
 settings = Settings(_env_file=".env")  # type: ignore[call-arg]

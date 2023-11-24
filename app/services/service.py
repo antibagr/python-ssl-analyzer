@@ -27,7 +27,7 @@ test_ssl_container = TestSSLContainer(
     client=docker_client,
     container_name=settings.TEST_SSL_CONTAINER_NAME,
     workdir=settings.TEST_SSL_WORKDIR,
-    output_file_name=settings.TEST_SSL_OUTPUT_FILE,
+    output_directory=settings.TEST_SSL_OUTPUT_DIR,
     commands_file_name=settings.TEST_SSL_COMMANDS_FILE,
 )
 
@@ -36,7 +36,6 @@ db = DB(client=clickhouse_client, table_name=settings.CLICKHOUSE_TABLE_NAME)
 data_provider_repo = TestSSLDataProviderRepository(
     container=test_ssl_container,
     json_parser=test_ssl_parser,
-    input_path=settings.TEST_SSL_INPUT_FILE,
 )
 
 

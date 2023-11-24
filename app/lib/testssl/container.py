@@ -9,7 +9,7 @@ import requests
 from docker.models.containers import Container
 from loguru import logger
 
-from app.dto.annotations import TestSSLRecord
+from app.dto.annotations import TestSSLRecords
 
 
 class TestSSLContainer:
@@ -19,13 +19,13 @@ class TestSSLContainer:
         client: docker.DockerClient,
         container_name: str,
         workdir: pathlib.Path,
-        output_file_name: pathlib.Path,
+        output_directory: pathlib.Path,
         commands_file_name: pathlib.Path,
     ) -> None:
         self._client = client
         self._container_name = container_name
         self._workdir = workdir
-        self._output_file_name = output_file_name
+        self._output_directory = output_directory
         self._commands_file_name = commands_file_name
 
     @property
@@ -38,6 +38,10 @@ class TestSSLContainer:
     def wait_for_complete(self) -> None:
         try:
             logger.info("Waiting for container to complete")
+            # TODO: (a.bagrianov): Run ThreadPoolExecutor
+            # and parse simultaneously as data is being streamed
+            # Hint: We know for sure that the script is done when
+            # we got a record with id == "scanTime"
             _, output = self.container.exec_run(
                 f"parallel --jobs 16 --bar -a {self._commands_file_name.as_posix()}",
                 tty=True,
@@ -52,22 +56,20 @@ class TestSSLContainer:
             logger.error("Container timeout")
             self.container.kill()
 
-    def get_json(self) -> list[TestSSLRecord]:
-        logger.info(self._workdir / self._output_file_name.name)
+    def stream_data(self) -> t.Generator[TestSSLRecords, None, None]:
+        # TODO: (a.bagrianov): Just use shared volume instead...
+        logger.info(
+            f"Streaming data from {self._container_name}:{self._workdir / self._output_directory}"
+        )
         tar_gz, _ = self.container.get_archive(
-            self._workdir / self._output_file_name.name, encode_stream=True
+            self._workdir / self._output_directory, encode_stream=True
         )
 
-        with tarfile.open(
-            fileobj=io.BytesIO(b"".join(tar_gz)),
-            mode="r",
-        ) as tar:
-            try:
-                if _file := tar.extractfile(self._output_file_name.name):
-                    json_bytes = _file.read()
-                else:
-                    raise KeyError
-            except KeyError:
-                logger.error("No file in tar archive")
-                return []
-        return t.cast(list[TestSSLRecord], json.loads(json_bytes))
+        full_tar_gz = io.BytesIO(b"".join(tar_gz))
+
+        with tarfile.open(fileobj=full_tar_gz, mode="r") as tar:
+            for member in tar.getmembers():
+                if member.isfile():
+                    data = tar.extractfile(member)
+                    if data:
+                        yield t.cast(TestSSLRecords, json.loads(data.read()))

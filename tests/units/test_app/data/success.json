@@ -1,0 +1,317 @@
+[
+    {
+        "id": "engine_problem",
+        "ip": "google.com/",
+        "port": "443",
+        "severity": "WARN",
+        "finding": "No engine or GOST support via engine with your /opt/testssl/bin/openssl.Linux.x86_64"
+    },
+    {
+        "id": "service",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "HTTP"
+    },
+    {
+        "id": "pre_128cipher",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "No 128 cipher limit bug"
+    },
+    {
+        "id": "SSLv2",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "not offered"
+    },
+    {
+        "id": "SSLv3",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "not offered"
+    },
+    {
+        "id": "TLS1",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "LOW",
+        "finding": "offered (deprecated)"
+    },
+    {
+        "id": "TLS1_1",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "LOW",
+        "finding": "offered (deprecated)"
+    },
+    {
+        "id": "TLS1_2",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "offered"
+    },
+    {
+        "id": "TLS1_3",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "offered with final"
+    },
+    {
+        "id": "NPN",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "offered with grpc-exp, h2, http/1.1 (advertised)"
+    },
+    {
+        "id": "ALPN_HTTP2",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "h2"
+    },
+    {
+        "id": "ALPN",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "http/1.1grpc-exp"
+    },
+    {
+        "id": "TLS_extensions",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "'renegotiation info/#65281' 'EC point formats/#11' 'session ticket/#35' 'next protocol/#13172' 'key share/#51' 'supported versions/#43' 'extended master secret/#23' 'application layer protocol negotiation/#16'"
+    },
+    {
+        "id": "TLS_session_ticket",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "LOW",
+        "finding": "valid for 100800 seconds (>daily)"
+    },
+    {
+        "id": "SSL_sessionID_support",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "yes"
+    },
+    {
+        "id": "sessionresumption_ticket",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "supported"
+    },
+    {
+        "id": "sessionresumption_ID",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "supported"
+    },
+    {
+        "id": "TLS_timestamp",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "off by -2 seconds from your localtime"
+    },
+    {
+        "id": "certificate_compression",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "none"
+    },
+    {
+        "id": "clientAuth",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "none"
+    },
+    {
+        "id": "cert_numbers",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "2"
+    },
+    {
+        "id": "cert_signatureAlgorithm <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "SHA256 with RSA"
+    },
+    {
+        "id": "cert_keySize <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "RSA 2048 bits (exponent is 65537)"
+    },
+    {
+        "id": "cert_keyUsage <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "Digital Signature, Key Encipherment"
+    },
+    {
+        "id": "cert_extKeyUsage <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "TLS Web Server Authentication"
+    },
+    {
+        "id": "cert_serialNumber <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "34516DEC2672B814121C6A62C60F0D62"
+    },
+    {
+        "id": "cert_serialNumberLen <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "16"
+    },
+    {
+        "id": "cert_fingerprintSHA1 <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "8637283D77C92870345E6AFE604FFAB9DB2B922F"
+    },
+    {
+        "id": "cert_fingerprintSHA256 <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "97F561DF27F86B8C7991704061EF61847C18662730721EFBCABD96F853748D0B"
+    },
+    {
+        "id": "cert <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "-----BEGIN CERTIFICATE-----\nMIIPBDCCDeygAwIBAgIQNFFt7CZyuBQSHGpixg8NYjANBgkqhkiG9w0BAQsFADBGMQswCQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzETMBEGA1UEAxMKR1RTIENBIDFDMzAeFw0yMzEwMjMxMTE4MjVaFw0yNDAxMTUxMTE4MjRaMBcxFTATBgNVBAMMDCouZ29vZ2xlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK0XcEofD9BrAz/Fiw7LbzpboeNtVol+MWzsOsexBh2lPjsJsZmaaSabmEQvV099Wfg2fUQ4XAy/12kmF0pUwne4GoOMonVm3KG9tLb3Lt8idH1sbbf4X9Vsr8TDiJfpATEJpd4afUtk7oDqc4nSNLl0VG0t0bOeApodZeOGtbatWR1hwdZm2eEx28lQxEHwvkmzO/zu5OCR7ELiJAga3InyeL1FUuN+M2BFnBVJId3HhroufKrwuaSZ+oZ7Fs+emhlJT9ztOuOQU7BTfgVxZdrapzlls7NZE/0FChHPShfz0hb16i2Fp4lrjUgbLNOFsHC/obJQoi1FrHeKLHnSneECAwEAAaOCDBswggwXMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRpiAwt/CltALHqvEd3VaRg2+F5aTAfBgNVHSMEGDAWgBSKdH+vhc3ulc09nNDiRhTzcTUdJzBqBggrBgEFBQcBAQReMFwwJwYIKwYBBQUHMAGGG2h0dHA6Ly9vY3NwLnBraS5nb29nL2d0czFjMzAxBggrBgEFBQcwAoYlaHR0cDovL3BraS5nb29nL3JlcG8vY2VydHMvZ3RzMWMzLmRlcjCCCc0GA1UdEQSCCcQwggnAggwqLmdvb2dsZS5jb22CFiouYXBwZW5naW5lLmdvb2dsZS5jb22CCSouYmRuLmRldoIVKi5vcmlnaW4tdGVzdC5iZG4uZGV2ghIqLmNsb3VkLmdvb2dsZS5jb22CGCouY3Jvd2Rzb3VyY2UuZ29vZ2xlLmNvbYIYKi5kYXRhY29tcHV0ZS5nb29nbGUuY29tggsqLmdvb2dsZS5jYYILKi5nb29nbGUuY2yCDiouZ29vZ2xlLmNvLmlugg4qLmdvb2dsZS5jby5qcIIOKi5nb29nbGUuY28udWuCDyouZ29vZ2xlLmNvbS5hcoIPKi5nb29nbGUuY29tLmF1gg8qLmdvb2dsZS5jb20uYnKCDyouZ29vZ2xlLmNvbS5jb4IPKi5nb29nbGUuY29tLm14gg8qLmdvb2dsZS5jb20udHKCDyouZ29vZ2xlLmNvbS52boILKi5nb29nbGUuZGWCCyouZ29vZ2xlLmVzggsqLmdvb2dsZS5mcoILKi5nb29nbGUuaHWCCyouZ29vZ2xlLml0ggsqLmdvb2dsZS5ubIILKi5nb29nbGUucGyCCyouZ29vZ2xlLnB0ghIqLmdvb2dsZWFkYXBpcy5jb22CDyouZ29vZ2xlYXBpcy5jboIRKi5nb29nbGV2aWRlby5jb22CDCouZ3N0YXRpYy5jboIQKi5nc3RhdGljLWNuLmNvbYIPZ29vZ2xlY25hcHBzLmNughEqLmdvb2dsZWNuYXBwcy5jboIRZ29vZ2xlYXBwcy1jbi5jb22CEyouZ29vZ2xlYXBwcy1jbi5jb22CDGdrZWNuYXBwcy5jboIOKi5na2VjbmFwcHMuY26CEmdvb2dsZWRvd25sb2Fkcy5jboIUKi5nb29nbGVkb3dubG9hZHMuY26CEHJlY2FwdGNoYS5uZXQuY26CEioucmVjYXB0Y2hhLm5ldC5jboIQcmVjYXB0Y2hhLWNuLm5ldIISKi5yZWNhcHRjaGEtY24ubmV0ggt3aWRldmluZS5jboINKi53aWRldmluZS5jboIRYW1wcHJvamVjdC5vcmcuY26CEyouYW1wcHJvamVjdC5vcmcuY26CEWFtcHByb2plY3QubmV0LmNughMqLmFtcHByb2plY3QubmV0LmNughdnb29nbGUtYW5hbHl0aWNzLWNuLmNvbYIZKi5nb29nbGUtYW5hbHl0aWNzLWNuLmNvbYIXZ29vZ2xlYWRzZXJ2aWNlcy1jbi5jb22CGSouZ29vZ2xlYWRzZXJ2aWNlcy1jbi5jb22CEWdvb2dsZXZhZHMtY24uY29tghMqLmdvb2dsZXZhZHMtY24uY29tghFnb29nbGVhcGlzLWNuLmNvbYITKi5nb29nbGVhcGlzLWNuLmNvbYIVZ29vZ2xlb3B0aW1pemUtY24uY29tghcqLmdvb2dsZW9wdGltaXplLWNuLmNvbYISZG91YmxlY2xpY2stY24ubmV0ghQqLmRvdWJsZWNsaWNrLWNuLm5ldIIYKi5mbHMuZG91YmxlY2xpY2stY24ubmV0ghYqLmcuZG91YmxlY2xpY2stY24ubmV0gg5kb3VibGVjbGljay5jboIQKi5kb3VibGVjbGljay5jboIUKi5mbHMuZG91YmxlY2xpY2suY26CEiouZy5kb3VibGVjbGljay5jboIRZGFydHNlYXJjaC1jbi5uZXSCEyouZGFydHNlYXJjaC1jbi5uZXSCHWdvb2dsZXRyYXZlbGFkc2VydmljZXMtY24uY29tgh8qLmdvb2dsZXRyYXZlbGFkc2VydmljZXMtY24uY29tghhnb29nbGV0YWdzZXJ2aWNlcy1jbi5jb22CGiouZ29vZ2xldGFnc2VydmljZXMtY24uY29tghdnb29nbGV0YWdtYW5hZ2VyLWNuLmNvbYIZKi5nb29nbGV0YWdtYW5hZ2VyLWNuLmNvbYIYZ29vZ2xlc3luZGljYXRpb24tY24uY29tghoqLmdvb2dsZXN5bmRpY2F0aW9uLWNuLmNvbYIkKi5zYWZlZnJhbWUuZ29vZ2xlc3luZGljYXRpb24tY24uY29tghZhcHAtbWVhc3VyZW1lbnQtY24uY29tghgqLmFwcC1tZWFzdXJlbWVudC1jbi5jb22CC2d2dDEtY24uY29tgg0qLmd2dDEtY24uY29tggtndnQyLWNuLmNvbYINKi5ndnQyLWNuLmNvbYILMm1kbi1jbi5uZXSCDSouMm1kbi1jbi5uZXSCFGdvb2dsZWZsaWdodHMtY24ubmV0ghYqLmdvb2dsZWZsaWdodHMtY24ubmV0ggxhZG1vYi1jbi5jb22CDiouYWRtb2ItY24uY29tghRnb29nbGVzYW5kYm94LWNuLmNvbYIWKi5nb29nbGVzYW5kYm94LWNuLmNvbYIeKi5zYWZlbnVwLmdvb2dsZXNhbmRib3gtY24uY29tgg0qLmdzdGF0aWMuY29tghQqLm1ldHJpYy5nc3RhdGljLmNvbYIKKi5ndnQxLmNvbYIRKi5nY3BjZG4uZ3Z0MS5jb22CCiouZ3Z0Mi5jb22CDiouZ2NwLmd2dDIuY29tghAqLnVybC5nb29nbGUuY29tghYqLnlvdXR1YmUtbm9jb29raWUuY29tggsqLnl0aW1nLmNvbYILYW5kcm9pZC5jb22CDSouYW5kcm9pZC5jb22CEyouZmxhc2guYW5kcm9pZC5jb22CBGcuY26CBiouZy5jboIEZy5jb4IGKi5nLmNvggZnb28uZ2yCCnd3dy5nb28uZ2yCFGdvb2dsZS1hbmFseXRpY3MuY29tghYqLmdvb2dsZS1hbmFseXRpY3MuY29tggpnb29nbGUuY29tghJnb29nbGVjb21tZXJjZS5jb22CFCouZ29vZ2xlY29tbWVyY2UuY29tgghnZ3BodC5jboIKKi5nZ3BodC5jboIKdXJjaGluLmNvbYIMKi51cmNoaW4uY29tggh5b3V0dS5iZYILeW91dHViZS5jb22CDSoueW91dHViZS5jb22CFHlvdXR1YmVlZHVjYXRpb24uY29tghYqLnlvdXR1YmVlZHVjYXRpb24uY29tgg95b3V0dWJla2lkcy5jb22CESoueW91dHViZWtpZHMuY29tggV5dC5iZYIHKi55dC5iZYIaYW5kcm9pZC5jbGllbnRzLmdvb2dsZS5jb22CG2RldmVsb3Blci5hbmRyb2lkLmdvb2dsZS5jboIcZGV2ZWxvcGVycy5hbmRyb2lkLmdvb2dsZS5jboIYc291cmNlLmFuZHJvaWQuZ29vZ2xlLmNuMCEGA1UdIAQaMBgwCAYGZ4EMAQIBMAwGCisGAQQB1nkCBQMwPAYDVR0fBDUwMzAxoC+gLYYraHR0cDovL2NybHMucGtpLmdvb2cvZ3RzMWMzL2ZWSnhiVi1LdG1rLmNybDCCAQIGCisGAQQB1nkCBAIEgfMEgfAA7gB1AO7N0GTV2xrOxVy3nbTNE6Iyh0Z8vOzew1FIWUZxH7WbAAABi1x436EAAAQDAEYwRAIgQHJQsDZXaS1vf2tf60t23xUgnN1pETVLst93OIouUmgCIF39CIP3d1tUtiNR8ejjFj0fz+bTKZtLUVibX/REqJ3lAHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGLXHjjswAABAMARjBEAiAFA/t7mJnb6O7Eni88xkjvUn+u818R5OWkA+EsRUFeEAIgBfkbotOcp1XlTCPsHzSeXKc1S3NVhT4r3xvDFDcq88wwDQYJKoZIhvcNAQELBQADggEBAENph4udHqTUPMb6f51vgR9OD/3CoDxvleUaSwR85JqWKPJnjtOeNYXD0ATVFx1wvRtZ5eauuFeMiGTTB/H14YspjB4W9eUNAkVNaAxDmyLSx+ICLNJpJUGtF0TUCc7h0gvmXn/Gp7rhqYPdTB3KYGPEOuSYTlwU0kjF+uIHyokERU2NId2vt0CfJG7gnOAG6bW6GKRNqfszWvx8hYSWlqVKFe1UgvBB3PXIVfHfy9iuMwW7cXR3tU3kfYSKSOZuVQ+wijKd2GgFMmET0THdfcBmkLGkNFEY0vBxw7DNpFuOzqPivGhfq7IN0JyrRcq9j/xTPPuhrSrHuG4LEgHmMRI=\n-----END CERTIFICATE-----"
+    },
+    {
+        "id": "cert_commonName <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "*.google.com"
+    },
+    {
+        "id": "cert_commonName_wo_SNI <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "*.google.com"
+    },
+    {
+        "id": "cert_subjectAltName <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "*.google.com *.appengine.google.com *.bdn.dev *.origin-test.bdn.dev *.cloud.google.com *.crowdsource.google.com *.datacompute.google.com *.google.ca *.google.cl *.google.co.in *.google.co.jp *.google.co.uk *.google.com.ar *.google.com.au *.google.com.br *.google.com.co *.google.com.mx *.google.com.tr *.google.com.vn *.google.de *.google.es *.google.fr *.google.hu *.google.it *.google.nl *.google.pl *.google.pt *.googleadapis.com *.googleapis.cn *.googlevideo.com *.gstatic.cn *.gstatic-cn.com googlecnapps.cn *.googlecnapps.cn googleapps-cn.com *.googleapps-cn.com gkecnapps.cn *.gkecnapps.cn googledownloads.cn *.googledownloads.cn recaptcha.net.cn *.recaptcha.net.cn recaptcha-cn.net *.recaptcha-cn.net widevine.cn *.widevine.cn ampproject.org.cn *.ampproject.org.cn ampproject.net.cn *.ampproject.net.cn google-analytics-cn.com *.google-analytics-cn.com googleadservices-cn.com *.googleadservices-cn.com googlevads-cn.com *.googlevads-cn.com googleapis-cn.com *.googleapis-cn.com googleoptimize-cn.com *.googleoptimize-cn.com doubleclick-cn.net *.doubleclick-cn.net *.fls.doubleclick-cn.net *.g.doubleclick-cn.net doubleclick.cn *.doubleclick.cn *.fls.doubleclick.cn *.g.doubleclick.cn dartsearch-cn.net *.dartsearch-cn.net googletraveladservices-cn.com *.googletraveladservices-cn.com googletagservices-cn.com *.googletagservices-cn.com googletagmanager-cn.com *.googletagmanager-cn.com googlesyndication-cn.com *.googlesyndication-cn.com *.safeframe.googlesyndication-cn.com app-measurement-cn.com *.app-measurement-cn.com gvt1-cn.com *.gvt1-cn.com gvt2-cn.com *.gvt2-cn.com 2mdn-cn.net *.2mdn-cn.net googleflights-cn.net *.googleflights-cn.net admob-cn.com *.admob-cn.com googlesandbox-cn.com *.googlesandbox-cn.com *.safenup.googlesandbox-cn.com *.gstatic.com *.metric.gstatic.com *.gvt1.com *.gcpcdn.gvt1.com *.gvt2.com *.gcp.gvt2.com *.url.google.com *.youtube-nocookie.com *.ytimg.com android.com *.android.com *.flash.android.com g.cn *.g.cn g.co *.g.co goo.gl www.goo.gl google-analytics.com *.google-analytics.com google.com googlecommerce.com *.googlecommerce.com ggpht.cn *.ggpht.cn urchin.com *.urchin.com youtu.be youtube.com *.youtube.com youtubeeducation.com *.youtubeeducation.com youtubekids.com *.youtubekids.com yt.be *.yt.be android.clients.google.com developer.android.google.cn developers.android.google.cn source.android.google.cn"
+    },
+    {
+        "id": "cert_trust <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "Ok via SAN (same w/o SNI)"
+    },
+    {
+        "id": "cert_chain_of_trust <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "passed."
+    },
+    {
+        "id": "cert_certificatePolicies_EV <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "no"
+    },
+    {
+        "id": "cert_expirationStatus <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "MEDIUM",
+        "finding": "expires < 60 days (52)"
+    },
+    {
+        "id": "cert_notBefore <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "2023-10-23 11:18"
+    },
+    {
+        "id": "cert_notAfter <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "MEDIUM",
+        "finding": "2024-01-15 11:18"
+    },
+    {
+        "id": "cert_extlifeSpan <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "OK",
+        "finding": "certificate has no extended life time according to browser forum"
+    },
+    {
+        "id": "cert_eTLS <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "not present"
+    },
+    {
+        "id": "cert_crlDistributionPoints <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "http://crls.pki.goog/gts1c3/fVJxbV-Ktmk.crl"
+    },
+    {
+        "id": "cert_ocspURL <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "http://ocsp.pki.goog/gts1c3"
+    },
+    {
+        "id": "OCSP_stapling <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "LOW",
+        "finding": "not offered"
+    },
+    {
+        "id": "cert_mustStapleExtension <hostCert#1>",
+        "ip": "google.com/142.250.184.142",
+        "port": "443",
+        "severity": "INFO",
+        "finding": "--"
+    }
+]

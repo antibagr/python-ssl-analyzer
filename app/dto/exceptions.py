@@ -1,0 +1,2 @@
+﻿class TestSSLScanError(Exception):
+    pass

@@ -25,4 +25,6 @@ COPY --chown=testssl_user:testssl_user ./data/input.txt ./input.txt
 # Generate parallel commands as the non-root user
 RUN ./get_cmd_lines.sh ./input.txt ./commands.txt
 
+RUN mkdir -p /home/testssl_user/results
+
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]

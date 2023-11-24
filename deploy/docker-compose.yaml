@@ -24,7 +24,6 @@ services:
       dockerfile: deploy/testssl.Dockerfile
     environment:
       - MASS_TESTING_MODE=parallel
-      - TEST_SSL_INPUT_FILE=./data/input.txt
     env_file:
       - ../.env
     deploy:
